@@ -24,17 +24,19 @@ function sumarUno( numero ) {
 
 }
 
-sumarUno( 5 ).then( nuevoNumero => {
-    console.log(nuevoNumero);
-    return sumarUno( nuevoNumero );
-})
-.then(nuevoNumero => {
-    console.log(nuevoNumero);
-})
-.then(nuevoNumero => {
-    console.log(nuevoNumero);
-});
-    
+sumarUno( 5 )
+    .then( sumarUno )
+    .then( sumarUno )
+    .then( sumarUno )
+    .then( sumarUno )
+    .then( sumarUno )
+    .then( nuevoNumero => {
+        console.log(nuevoNumero);
+    })
+    .catch( error => {
+        console.log('ERROR EN PROMESA');
+        console.log(error);
+    });
 
 
 
